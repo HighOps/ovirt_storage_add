@@ -1,0 +1,12 @@
+- name: adding storage domains
+  ovirt_storage_create: name='{{item.key}}' 
+                        datacenter='{{item.value.datacenter}}'
+                        host='{{item.value.host}}'
+                        path='{{item.value.path}}'
+                        type='{{item.value.type}}'
+                        storage_type='{{item.value.storage_type}}'
+                        storage_url='{{item.value.storage_url}}'
+                        url='{{item.value.engine_fqdn}}'
+                        username='{{item.value.engine_user}}' 
+                        password='{{item.value.engine_password}}'
+  with_dict: '{{ovirt_storage_add}}'
