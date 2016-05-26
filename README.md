@@ -9,7 +9,7 @@ Ansible 1.4 and a above
 ##Role variables
 ```yaml
 ovirt_storage_add:
-    data:
+      - {
         type: #storage to use can be nfs glusterfs
 
         host: hosted_engine_1 #Name of host to attach data domain.
@@ -27,6 +27,7 @@ ovirt_storage_add:
         engine_password: somepassword # hosted engine password.
 
         engine_user: admin@internal # hosted engine username.
+        }
 ```
 ## Example Playbook
 ```yaml
