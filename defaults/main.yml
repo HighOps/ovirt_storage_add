@@ -1,33 +1,39 @@
 ovirt_storage_add:
-    data:
-        type: nfs
-        host: hosted_engine_1
-        datacenter: Default
-        storage_type: data
-        path: '/data'
-        storage_url: 192.168.15.51
-        engine_fqdn: https://engine.example.com.com
-        engine_password: somepassword
-        engine_user: admin@internal
-        
-    export:
-        type: nfs
-        host: hosted_engine_1
-        datacenter: Default
-        storage_type: export
-        path: '/export'
-        storage_url: 192.168.15.51
-        engine_fqdn: https://engine.example.com.com
-        engine_password: somepassword
-        engine_user: admin@internal
-        
-    iso:
-        type: nfs
-        host: hosted_engine_1
-        datacenter: Default
-        storage_type: iso
-        path: '/iso'
-        storage_url: 192.168.15.51
-        engine_fqdn: https://engine.example.com.com
-        engine_password: somepassword
-        engine_user: admin@internal
+      - {
+         name: data, 
+         type: nfs,
+         host: hosted_engine_1,
+         datacenter: Default,
+         storage_type: data,
+         path: '/data',
+         storage_url: "192.168.15.51",
+         engine_fqdn: "https://engine.example.com.com",
+         engine_password: "somepassword",
+         engine_user: "admin@internal",
+         }
+
+      - {
+         name: export, 
+         type: nfs,
+         host: hosted_engine_1,
+         datacenter: Default,
+         storage_type: export,
+         path: '/export',
+         storage_url: "192.168.15.51",
+         engine_fqdn: "https://engine.example.com.com",
+         engine_password: "somepassword",
+         engine_user: "admin@internal",
+         }
+         
+      - {
+         name: iso, 
+         type: nfs,
+         host: hosted_engine_1,
+         datacenter: Default,
+         storage_type: iso,
+         path: '/iso',
+         storage_url: "192.168.15.51",
+         engine_fqdn: "https://engine.example.com.com",
+         engine_password: "somepassword",
+         engine_user: "admin@internal",
+         }
